@@ -111,7 +111,7 @@ class BlogLogger < Slogger
 
           options = {}
           options['content'] = "## [#{item.title.gsub(/\n+/,' ').strip}](#{item.link})\n\n#{content.strip}#{tags}"
-          options['datestamp'] = item.date.utc.iso8601 rescue item.dc_date.utc.iso8601
+          #options['datestamp'] = item.date.utc.iso8601 rescue item.dc_date.utc.iso8601
           options['starred'] = starred
           options['uuid'] = %x{uuidgen}.gsub(/-/,'').strip
           sl = DayOne.new
