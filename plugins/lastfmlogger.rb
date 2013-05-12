@@ -51,7 +51,7 @@ class LastFMLogger < Slogger
     config['lastfm_feeds'] ||= ['recent', 'loved']
 
     feeds = []
-    feeds << {'title'=>"Listening To", 'feed' => "http://ws.audioscrobbler.com/2.0/user/#{config['lastfm_user']}/recenttracks.rss?limit=100"} if config['lastfm_feeds'].include?('recent')
+    feeds << {'title'=>"Listening To", 'feed' => "http://ws.audioscrobbler.com/1.0/user/#{config['lastfm_user']}/recenttracks.rss?limit=100"} if config['lastfm_feeds'].include?('recent')
     # This doesn't work with my username..? Returns an error for rss feed so
     # must be something on lastfm side.
     # feeds << {'title'=>"Loved Tracks", 'feed' => "http://ws.audioscrobbler.com/2.0/user/#{config['lastfm_user']}/lovedtracks.rss?limit=100"} if config['lastfm_feeds'].include?('loved')
